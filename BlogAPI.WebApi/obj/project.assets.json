@@ -1192,7 +1192,8 @@
           "BlogApi.Domain": "1.0.0",
           "Microsoft.EntityFrameworkCore": "8.0.13",
           "Microsoft.Extensions.Configuration": "8.0.0",
-          "RabbitMQ.Client": "6.5.0"
+          "RabbitMQ.Client": "6.5.0",
+          "System.IdentityModel.Tokens.Jwt": "6.35.0"
         },
         "compile": {
           "bin/placeholder/BlogApi.Infrastructure.dll": {}
