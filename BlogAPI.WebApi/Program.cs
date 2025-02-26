@@ -1,4 +1,3 @@
-using Microsoft.OpenApi.Models;
 using BlogApi.Application.Interfaces;
 using BlogApi.Application.Mappers;
 using BlogApi.Application.UseCases;
@@ -8,73 +7,50 @@ using BlogApi.Domain.Services;
 using BlogAPI.Infrastructure.Data.Context;
 using BlogAPI.Infrastructure.Data.Repositories;
 using BlogAPI.Infrastructure.Messaging;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container
-builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
-    c.SwaggerDoc("v1", new OpenApiInfo { Title = "BlogAPI", Version = "v1" });
-    
-    // Configuração para utilizar o JWT no Swagger
-    c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+    c.SwaggerDoc("v1", new OpenApiInfo
     {
-        Description = "JWT Authorization header using the Bearer scheme",
-        Name = "Authorization",
-        In = ParameterLocation.Header,
-        Type = SecuritySchemeType.ApiKey,
-        Scheme = "Bearer"
-    });
-
-    c.AddSecurityRequirement(new OpenApiSecurityRequirement
-    {
-        {
-            new OpenApiSecurityScheme
-            {
-                Reference = new OpenApiReference
-                {
-                    Type = ReferenceType.SecurityScheme,
-                    Id = "Bearer"
-                }
-            },
-            Array.Empty<string>()
-        }
+        Title = "Blog API",
+        Version = "v1"
     });
 });
+builder.Services.AddControllers();
+builder.Services.AddEndpointsApiExplorer();
 
-// Configuração do DbContext
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-// AutoMapper
 builder.Services.AddAutoMapper(typeof(MappingProfile));
 
-// Registrar Repositories
 builder.Services.AddScoped<IArticleRepository, ArticleRepository>();
 
-// Registrar Domain Services
 builder.Services.AddScoped<IArticleService, ArticleService>();
 builder.Services.AddScoped<IEmailService, EmailService>();
 
-// Registrar Application UseCases
 builder.Services.AddScoped<IArticleUseCase, ArticleUseCase>();
 
 builder.Services.AddSingleton<RabbitMQService>();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwaggerUI(c =>
+    {
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "Blog API V1");
+    });
 }
 
 app.UseHttpsRedirection();
 
-// Adiciona autenticação e autorização ao pipeline
 app.UseAuthentication();
 app.UseAuthorization();
 

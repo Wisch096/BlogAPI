@@ -1,0 +1,16 @@
+C:\repos\BlogAPI\BlogAPI.Infrastructure\bin\Debug\net8.0\BlogApi.Infrastructure.deps.json
+C:\repos\BlogAPI\BlogAPI.Infrastructure\bin\Debug\net8.0\BlogApi.Infrastructure.dll
+C:\repos\BlogAPI\BlogAPI.Infrastructure\bin\Debug\net8.0\BlogApi.Infrastructure.pdb
+C:\repos\BlogAPI\BlogAPI.Infrastructure\bin\Debug\net8.0\BlogApi.Domain.dll
+C:\repos\BlogAPI\BlogAPI.Infrastructure\bin\Debug\net8.0\BlogApi.Domain.pdb
+C:\repos\BlogAPI\BlogAPI.Infrastructure\obj\Debug\net8.0\BlogApi.Infrastructure.csproj.AssemblyReference.cache
+C:\repos\BlogAPI\BlogAPI.Infrastructure\obj\Debug\net8.0\BlogApi.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\repos\BlogAPI\BlogAPI.Infrastructure\obj\Debug\net8.0\BlogApi.Infrastructure.AssemblyInfoInputs.cache
+C:\repos\BlogAPI\BlogAPI.Infrastructure\obj\Debug\net8.0\BlogApi.Infrastructure.AssemblyInfo.cs
+C:\repos\BlogAPI\BlogAPI.Infrastructure\obj\Debug\net8.0\BlogApi.Infrastructure.csproj.CoreCompileInputs.cache
+C:\repos\BlogAPI\BlogAPI.Infrastructure\obj\Debug\net8.0\BlogApi.Infrastructure.sourcelink.json
+C:\repos\BlogAPI\BlogAPI.Infrastructure\obj\Debug\net8.0\BlogApi..14E42DFE.Up2Date
+C:\repos\BlogAPI\BlogAPI.Infrastructure\obj\Debug\net8.0\BlogApi.Infrastructure.dll
+C:\repos\BlogAPI\BlogAPI.Infrastructure\obj\Debug\net8.0\refint\BlogApi.Infrastructure.dll
+C:\repos\BlogAPI\BlogAPI.Infrastructure\obj\Debug\net8.0\BlogApi.Infrastructure.pdb
+C:\repos\BlogAPI\BlogAPI.Infrastructure\obj\Debug\net8.0\ref\BlogApi.Infrastructure.dll

@@ -1,10 +1,11 @@
 ﻿using AutoMapper;
 using BlogApi.Application.DTOs;
+using BlogApi.Application.Interfaces;
 using BlogApi.Domain.Interfaces.Services;
 
 namespace BlogApi.Application.UseCases;
 
-public class ArticleUseCase
+public class ArticleUseCase : IArticleUseCase
 {
     private readonly IArticleService _articleService;
     private readonly IEmailService _emailService;
@@ -12,7 +13,6 @@ public class ArticleUseCase
 
     public ArticleUseCase(
         IArticleService articleService, 
-
         IEmailService emailService,
         IMapper mapper)
     {
@@ -28,7 +28,7 @@ public class ArticleUseCase
             articleDTO.Content, 
             userId);
         
-        await _emailService.SendArticleCreatedEmailAsync("teste", article.Title);
+        await _emailService.SendArticleCreatedEmailAsync("ok", article.Title);
 
         return _mapper.Map<ArticleDTO>(article);
     }

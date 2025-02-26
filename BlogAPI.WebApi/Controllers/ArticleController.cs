@@ -22,9 +22,8 @@ public class ArticleController : ControllerBase
     {
         if (!ModelState.IsValid)
             return BadRequest(ModelState);
-
-        var userId = Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
-        var result = await _articleUseCase.CreateArticleAsync(articleDTO, userId);
+        
+        var result = await _articleUseCase.CreateArticleAsync(articleDTO, new Guid());
 
         return CreatedAtAction(nameof(GetById), new { id = result.Id }, result);
     }
