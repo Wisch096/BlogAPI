@@ -8,13 +8,12 @@
 
   <ItemGroup>
     <Folder Include="Auth\" />
-    <Folder Include="Data\Context\" />
-    <Folder Include="Data\Repositories\" />
-    <Folder Include="Messaging\" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.13" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="8.0.0" />
+    <PackageReference Include="RabbitMQ.Client" Version="6.5.0" />
   </ItemGroup>
 
   <ItemGroup>
